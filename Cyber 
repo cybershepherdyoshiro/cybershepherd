@@ -1,0 +1,190 @@
+export default function CyberShepherdPlatform() { const features = [ { title: 'Guardian Defense System', description: 'Centralized security operations dashboard with alerts, monitoring, access controls, and incident management.', }, { title: 'Identity Verification', description: 'Secure onboarding with KYC verification, role approvals, and multi-factor authentication.', }, { title: 'Forums & Collaboration', description: 'Community forums for verified guardians to discuss cybersecurity, response protocols, and support.', }, { title: 'Announcement Command Center', description: 'Admin-only announcement system where only the platform owner can broadcast updates to all guardians.', }, ];
+
+const guardians = [ { name: 'Guardian Alpha', role: 'Security Analyst', status: 'Active', }, { name: 'Guardian Sigma', role: 'Threat Hunter', status: 'Monitoring', }, { name: 'Guardian Echo', role: 'Incident Responder', status: 'Online', }, ];
+
+const forumTopics = [ 'Zero-Day Threat Discussion', 'Infrastructure Defense Protocols', 'Weekly Guardian Reports', 'Secure Communication Standards', ];
+
+return ( <div className="min-h-screen bg-black text-white font-sans"> <header className="border-b border-cyan-900 bg-gradient-to-r from-black via-slate-950 to-cyan-950"> <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row justify-between items-center gap-6"> <div> <h1 className="text-5xl font-bold tracking-wide text-cyan-400"> CyberShepherd.com </h1> <p className="mt-3 text-slate-300 max-w-2xl text-lg"> Advanced guardian coordination platform for ethical cybersecurity defense, secure communication, and verified collaboration. </p> </div>
+
+<div className="flex gap-4">
+        <button className="bg-cyan-500 hover:bg-cyan-400 transition px-6 py-3 rounded-2xl font-semibold text-black">
+          Launch Dashboard
+        </button>
+        <button className="border border-cyan-500 px-6 py-3 rounded-2xl hover:bg-cyan-900 transition">
+          Verify Identity
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-4 gap-6">
+    {features.map((feature) => (
+      <div
+        key={feature.title}
+        className="bg-slate-950 border border-cyan-900 rounded-3xl p-6 shadow-2xl"
+      >
+        <h2 className="text-2xl font-bold text-cyan-300 mb-3">
+          {feature.title}
+        </h2>
+        <p className="text-slate-300 leading-relaxed">
+          {feature.description}
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section className="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-8">
+    <div className="bg-slate-950 border border-cyan-900 rounded-3xl p-8">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-cyan-300">
+          Guardian Network
+        </h2>
+        <span className="bg-green-500/20 text-green-300 px-4 py-1 rounded-full text-sm">
+          Secure Channel Active
+        </span>
+      </div>
+
+      <div className="space-y-4">
+        {guardians.map((guardian) => (
+          <div
+            key={guardian.name}
+            className="flex items-center justify-between border border-slate-800 rounded-2xl p-4"
+          >
+            <div>
+              <h3 className="font-semibold text-lg">{guardian.name}</h3>
+              <p className="text-slate-400">{guardian.role}</p>
+            </div>
+
+            <span className="text-cyan-300">{guardian.status}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="bg-slate-950 border border-cyan-900 rounded-3xl p-8">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-cyan-300">
+          Admin Announcement Group
+        </h2>
+        <span className="bg-cyan-500/20 text-cyan-200 px-4 py-1 rounded-full text-sm">
+          Admin Only Broadcast
+        </span>
+      </div>
+
+      <div className="space-y-4">
+        <div className="bg-black border border-cyan-800 rounded-2xl p-4">
+          <p className="text-cyan-300 font-semibold">Administrator</p>
+          <p className="text-slate-300 mt-2">
+            Scheduled maintenance tonight at 23:00 UTC. Guardian systems will remain online during patch deployment.
+          </p>
+        </div>
+
+        <div className="bg-black border border-slate-800 rounded-2xl p-4">
+          <p className="text-slate-400 text-sm">
+            Guardians can read announcements and react, but only administrators can post new broadcasts.
+          </p>
+        </div>
+
+        <div className="flex gap-3">
+          <input
+            placeholder="Admin announcement input"
+            className="flex-1 bg-black border border-slate-700 rounded-xl px-4 py-3 outline-none"
+          />
+
+          <button className="bg-cyan-500 hover:bg-cyan-400 transition px-5 py-3 rounded-xl text-black font-semibold">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section className="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-8">
+    <div className="bg-slate-950 border border-cyan-900 rounded-3xl p-8">
+      <h2 className="text-3xl font-bold text-cyan-300 mb-6">
+        Verification & Access Control
+      </h2>
+
+      <div className="space-y-5">
+        <div className="border border-slate-800 rounded-2xl p-5">
+          <h3 className="font-semibold text-xl">Identity Verification</h3>
+          <p className="text-slate-400 mt-2">
+            Government ID validation, secure onboarding workflow, and encrypted user storage.
+          </p>
+        </div>
+
+        <div className="border border-slate-800 rounded-2xl p-5">
+          <h3 className="font-semibold text-xl">Role Permissions</h3>
+          <p className="text-slate-400 mt-2">
+            Assign guardian roles such as analyst, moderator, incident responder, or administrator.
+          </p>
+        </div>
+
+        <div className="border border-slate-800 rounded-2xl p-5">
+          <h3 className="font-semibold text-xl">Security Features</h3>
+          <p className="text-slate-400 mt-2">
+            End-to-end encrypted communication, MFA login, session monitoring, and audit logs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-slate-950 border border-cyan-900 rounded-3xl p-8">
+      <h2 className="text-3xl font-bold text-cyan-300 mb-6">
+        Guardian Forums
+      </h2>
+
+      <div className="space-y-4">
+        {forumTopics.map((topic) => (
+          <div
+            key={topic}
+            className="border border-slate-800 rounded-2xl p-5 hover:border-cyan-700 transition"
+          >
+            <h3 className="font-semibold text-lg">{topic}</h3>
+            <p className="text-slate-400 mt-2">
+              Verified guardians can participate in moderated cybersecurity discussions.
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section className="max-w-7xl mx-auto px-6 py-16">
+    <div className="bg-gradient-to-r from-cyan-950 to-slate-950 border border-cyan-800 rounded-[2rem] p-10 text-center">
+      <h2 className="text-4xl font-bold text-cyan-300">
+        CyberShepherd Guardian Command
+      </h2>
+
+      <p className="mt-4 text-slate-300 max-w-3xl mx-auto text-lg">
+        Designed for ethical cybersecurity collaboration with secure communication, verified identities, controlled announcements, and powerful guardian administration.
+      </p>
+
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <button className="bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold px-7 py-3 rounded-2xl">
+          Create Guardian Account
+        </button>
+
+        <button className="border border-cyan-500 hover:bg-cyan-900 transition px-7 py-3 rounded-2xl">
+          Open Security Portal
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer className="border-t border-slate-900 py-8 text-center text-slate-500">
+    © 2026 CyberShepherd.com — Ethical Cyber Defense Platform
+
+FREE SELF-HOSTED SECURITY STACK
+
+• Frontend Hosting: Vercel Free Tier • Database: Supabase Free Tier • Authentication: Supabase Auth with MFA • Firewall Protection: Cloudflare Free WAF & DDoS Protection • Admin Controls: Role-Based Access Control • Realtime Messaging: Supabase Realtime Channels • Verification System: Secure onboarding workflow • Logging: Activity monitoring and audit trails • Secure Access: HTTPS + encrypted sessions
+
+CUSTOM FIREWALL FEATURES
+
+• IP blocking system • Login attempt rate limiting • Suspicious request detection • Admin emergency lockdown switch • Device session monitoring • Guardian role permissions • Secure API middleware validation • Automatic request filtering • Real-time threat alerts
+
+SUGGESTED FREE TECH STACK
+
+• React + Next.js frontend • TailwindCSS interface • Supabase backend • Cloudflare firewall and DNS • GitHub private repository • Vercel deployment
+
+This setup allows CyberShepherd.com to operate with strong security protections while remaining free during early development and testing stages. </footer> </div> ); }
